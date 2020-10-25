@@ -70,3 +70,29 @@ nav ul li {
   font-family: var(--displayTxt);
 }
 
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.justifyCenter {
+  justify-content: center;
+  justify-items: center;
+}
+
+.justifyEnd {
+  justify-content: end;
+  justify-items: end;
+}
+
+.justifySpaceBetween {
+  justify-items: space-between;
+}
+
+.alignCenter {
+  align-content: center;
+  align-items: center;
+}
