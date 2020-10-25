@@ -84,7 +84,7 @@ nav ul li {
 }
 
 .justifyEnd {
-  justify-content: end;
+  justify-content: flex-end;
   justify-items: end;
 }
 
