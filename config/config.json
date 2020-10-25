@@ -1,16 +1,16 @@
 {
   "development": {
-    "database": "express_auth_development",
+    "database": "green_room_dev",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "express_auth_test",
+    "database": "green_room_dev_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "express_auth_production",
+    "database": "green_room_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
