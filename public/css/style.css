@@ -1,9 +1,64 @@
+html {
+  box-sizing: border-box;
+  
+  /* fallback font size: should be large enough for mobile screens */
+  font-size: 18px;
+  
+  /* responsive font size --from CSS Tricks*/
+  font-size: min(max(16px, 3vw), 24px);
+  scroll-behavior: smooth;
+
+  margin: 2rem;
+
+  /* high emph dark text for light backgrounds */
+  --darkColor: hsla(0, 0%, 0%, .87);
+  /* high emph light text for dark backgrounds */
+  --lightColor: hsla(0, 0%, 100%, .87);
+  /* high emph light text for dark backgrounds */
+  --mainColor: var(--darkColor);
+
+  /* background colors */
+  --lightBg: #ffffff;
+  --darkBg: #121212
+  /* primary background color */
+  --mainBg: var(--lightBg);
+
+}
+
+/* shifts bg to white and text to black for people who prefer a light theme */
+@media (prefers-color-scheme: dark) {
+  --mainBg: var(--darkBg);
+  --mainColor: var(--darkColor);
+}
+
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* remove all animations and transitions for people who prefer not to see them */
+@media (prefers-reduced-motion: reduce) { 
+  * {
+      animation-play-state: paused;
+      transition: none;
+      scroll-behavior: auto;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--mainBg);
+  color: var(--mainColor);
+  margin: 0;
+  padding: 0;
+}
+
 nav ul li {
   text-decoration: none;
   display: inline-block;
   margin-right: .3em;
 }
 
-h1 {
-  color: chartreuse;
-}
