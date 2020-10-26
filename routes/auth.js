@@ -13,8 +13,7 @@ router.post('/signup', (req, res) => {
     where: {
       email: req.body.email
     }, defaults: {
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
+      name: req.body.name,
       password: req.body.password
     }
   }).then(([user, created]) => {
@@ -22,7 +21,7 @@ router.post('/signup', (req, res) => {
       // if created, success and login
       console.log('user created');
       passport.authenticate('local', {
-        successRedirect: '/',
+        successRedirect: '/profile',
         successFlash: 'Account created and logged in'
       })(req, res);
     } else {
