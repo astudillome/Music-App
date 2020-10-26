@@ -8,4 +8,6 @@ const axios = require('axios');
 //   res.render('auth/signup');
 // });
 
-router.get('/', (req, res))
+router.post('/', (req, res) =>{
+  console.log("in search post route")
+})

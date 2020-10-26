@@ -1,18 +1,15 @@
+// Require
 require('dotenv').config();
 const express = require('express');
 const axios = require('axios')
 const layouts = require('express-ejs-layouts');
-const disconnect = require('disconnect')
 const session = require('express-session')
 const flash = require('connect-flash');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const app = express();
-var Discogs = require('disconnect').Client;
 
-
-
-
+// Middleware
 app.set('view engine', 'ejs');
 
 app.use(require('morgan')('dev'));
@@ -38,18 +35,14 @@ app.use((req, res, next) => {
   next();
 });
 
+// Routes
 app.get('/', (req, res) => {
   res.render('index');
 });
 
 
 //Testing API
-app.get('/authorize', (req,res) => {
-axios.get(`https://api.discogs.com/database/search?q=Nirvana&key=` + process.env.disKey + `&secret=` + process.env.disSecret).then(({
-  data: {results}
-}) => JSON.stringify(res)).catch(err => console.log("this is the error" + err));
-console.log('this is the result' + JSON.stringify(res))
-});
+
 
 app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
