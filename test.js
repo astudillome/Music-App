@@ -3,14 +3,13 @@ const express = require('express');
 const axios = require('axios');
 const app = express();
 
-//Testing API
-app.get('/', (req, res) => {
-  axios.get(`https://api.discogs.com/database/search?q=Nirvana&key=${process.env.disKey}&secret=${process.env.disSecret}`).then(function (apiResponse) {
-    let discogs = apiResponse.data.results;
-    // console.log(discogs);
-    res.send('/', {discogs})
-  })
-});
+app.get('/searchresults', (req, res) => {
+    axios.get(`https://api.discogs.com/database/search?artist=Dolly+Parton&key=${process.env.disKey}&secret=${process.env.disSecret}`).then(function(apiResponse) {
+        var discogs = apiResponse.data.results;
+        console.log(discogs);
+        res.render('search-results', {discogs})
+        })
+    });
 
-
-app.listen(3000)
+    
+    app.listen(8000)
