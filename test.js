@@ -7,7 +7,8 @@ const app = express();
 app.get('/', (req, res) => {
   axios.get(`https://api.discogs.com/database/search?q=Nirvana&key=${process.env.disKey}&secret=${process.env.disSecret}`).then(function (apiResponse) {
     let discogs = apiResponse.data.results;
-    console.log(discogs);
+    // console.log(discogs);
+    res.send('/', {discogs})
   })
 });
 
