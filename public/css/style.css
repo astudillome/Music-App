@@ -19,9 +19,12 @@ html {
 
   /* background colors */
   --lightBg: #ffffff;
-  --darkBg: #121212
+  --darkBg: #121212;
   /* primary background color */
   --mainBg: var(--lightBg);
+
+  --bodyTxt: 'Noto Sans', 'Roboto', sans-serif;
+  --displayTxt: 'Permanent Marker', sans-serif;
 
 }
 
@@ -54,11 +57,52 @@ body {
   color: var(--mainColor);
   margin: 0;
   padding: 0;
+  font-family: var(--bodyTxt);
 }
 
 nav ul li {
   text-decoration: none;
-  display: inline-block;
-  margin-right: .3em;
 }
 
+
+.navUl:first-child {
+  justify-content: flex-start;
+  justify-items: start;
+}
+
+.navUl:not(:first-child) {
+  margin-left: .5rem;
+}
+
+.display {
+  font-family: var(--displayTxt);
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+}
+
+.justifyCenter {
+  justify-content: center;
+  justify-items: center;
+}
+
+.justifyEnd {
+  justify-content: flex-end;
+  justify-items: end;
+}
+
+.justifySpaceBetween {
+  justify-items: space-between;
+}
+
+.alignCenter {
+  align-content: center;
+  align-items: center;
+}

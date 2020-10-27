@@ -4,5 +4,10 @@
     <p>Album Title: <%= discogs[i].title %> </p>
     <p>Release Year: <%= discogs[i].year %></p>
     <p>Genre: <%= discogs[i].genre %></p>
+    <form method="GET" action="/favorites">
+        <input hidden type= "text" name="name" value="discogs[i].title">
+        <button class="" type="submit">Add to Favorites</button>
+    </form>
     <img src= "<%=discogs[i].cover_image%>" >
+
 <% } %>

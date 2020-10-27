@@ -41,13 +41,13 @@ app.get('/', (req, res) => {
 });
 
 //search results
-app.get('/results', (req, res) => {
-  axios.get(`https://api.discogs.com/database/search?artist=Dolly+Parton&key=${process.env.disKey}&secret=${process.env.disSecret}`).then(function(apiResponse) {
-      var discogs = apiResponse.data.results;
-      console.log(discogs);
-      res.render('search-results', {discogs})
-      })
-  });
+// app.get('/results', (req, res) => {
+//   axios.get(`https://api.discogs.com/database/search?artist=Dolly+Parton&key=${process.env.disKey}&secret=${process.env.disSecret}`).then(function(apiResponse) {
+//       var discogs = apiResponse.data.results;
+//       console.log(discogs);
+//       res.render('search-results', {discogs})
+//       })
+//   });
 
 
 app.get('/profile', isLoggedIn, (req, res) => {
@@ -55,6 +55,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 });
 
 app.use('/auth', require('./routes/auth'));
+app.use('/search', isLoggedIn, require('./routes/search'));
 
 var server = app.listen(process.env.PORT || 3000, ()=> console.log(`🎧You're listening to the smooth sounds of port ${process.env.PORT || 3000}🎧`));
 
