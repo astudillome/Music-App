@@ -5,7 +5,7 @@
     <p>Release Year: <%= discogs[i].year %></p>
     <p>Genre: <%= discogs[i].genre %></p>
     <form method="GET" action="/favorites">
-        <input hidden type= "text" name="name" value="discogs[i].title">
+        <input hidden type= "text" name="" value="discogs[i].master_id">
         <button class="" type="submit">Add to Favorites</button>
     </form>
     <img src= "<%=discogs[i].cover_image%>" >
