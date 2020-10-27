@@ -90,6 +90,14 @@ nav ul li {
   overflow: hidden;
 }
 
+.flexDirectCol {
+  flex-direction: column;
+}
+
+.flexWrapNone {
+  flex-wrap: nowrap;
+}
+
 .grid {
   display: grid;
 }
@@ -119,5 +127,5 @@ nav ul li {
 }
 
 .firstCap {
-  text-transform:capitalize;
+  text-transform: capitalize;
 }
