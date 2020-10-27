@@ -32,8 +32,8 @@ router.post('/', function(req,res) {
 });
 
 //Display more information for each album
-router.post('/:id', function(req,res) {
-    axios.get(`https://api.discogs.com/masters/${req.body.master_id}&key=${process.env.disKey}&secret=${process.env.disSecret}`).then(function(apiResponse) {
+router.get('/:id', function(req,res) {
+    axios.get(`https://api.discogs.com/masters/${req.params.id}`).then(function(apiResponse) {
         let albumDetails = apiResponse.data;
         console.log(albumDetails)
         res.render('album-details', {albumDetails})
