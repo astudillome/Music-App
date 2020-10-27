@@ -8,7 +8,7 @@ const axios = require('axios');
 //GET /favorites - return a page with favorited albums
 router.get('/', (req, res) =>{
     //ToDo: get all records from DB and render to view
-    db.favorites.findAll().then(allFavorites => {
+    db.favorite.findAll().then(allFavorites => {
         res.render('favorites', {favorites: allFavorites})
     })
 })
@@ -16,10 +16,10 @@ router.get('/', (req, res) =>{
 //POST /favorites - receive album information and add it to the Database
 router.post('/', function(req,res) {
     //ToDo: Get form data and add it
-    db.pokemon.findOrCreate(req.body).then(newFavorite => {
-        res.redirect('/favorites')
-    })
-})
+    console.log(req.body)
+    //db.pokemon.findOrCreate(req.body).then(newFavorite => {
+        res.redirect('/')
+    });
 
 
 
