@@ -1,22 +1,17 @@
 <h2>Album Details</h2>
 
-<h2>Comments</h2>
-<% for (let i = 0; i < ; i++) { %>
-  <p><%= content %></p>
-  <p> - <%= name %></p>
-<% } %>
+<h3>Comments</h3>
 
-<h3>Create a New Comment</h3>
+<h4>Create a New Comment</h4>
 <form action="/comments" method="POST">
   <div class="form-group">
-    <label for="title">Full Name</label>
+    <label for="name">Full Name</label>
     <input type="text" class="form-control" id="name" name="name" required>
   </div>
   <div class="form-group">
     <label for="content">Comment</label>
     <textarea type="text" class="form-control" id="content" name="content" required></textarea>
   </div>
-  <!-- value needs updating to reflect album masterId -->
-  <input type="hidden" name="articleId" value="<%= article.id %>">
+  <input type="hidden" name="masterId" value="<%= 1 %>">
   <input type="submit" class="btn btn-primary">
 </form>
