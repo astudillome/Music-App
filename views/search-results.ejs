@@ -1,8 +1,16 @@
 <h2>Search Results for <span class="firstCap"><%= artist %></span></h2>
 
-<% for (let i=0; i < discogs.length; i++) { %>
-  <h5><%= discogs[i].title %></h5>
-  <p><%= discogs[i].year %></p>
-  <p><%= discogs[i].genre %></p>
-  <img src= "<%=discogs[i].cover_image%>" >
+<% for (i=0; i < discogs.length; i++) { %>
+    <p>Album Title: <%= discogs[i].title %> </p>
+    <p>Release Year: <%= discogs[i].year %></p>
+    <p>Genre: <%= discogs[i].genre %></p>
+    <form method="POST" action="/favorites">
+        <input hidden type= "text" name="artist_name" value="<%= artist %>">
+        <input hidden type= "text" name="album_title" value="<%= discogs[i].title %>">
+        <input hidden type= "text" name="master_id" value="<%= discogs[i].id %>">
+        <button class="" type="submit">Add to Favorites</button>
+    </form>
+    <br>
+    <img src= "<%=discogs[i].cover_image%>" >
+
 <% } %>
