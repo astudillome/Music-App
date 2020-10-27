@@ -16,10 +16,18 @@ router.get('/', (req, res) =>{
 //POST /favorites - receive album information and add it to the Database
 router.post('/', function(req,res) {
     //ToDo: Get form data and add it
-    console.log('---------')
-    console.log(req.body.artist_id)
-    //db.pokemon.findOrCreate(req.body).then(newFavorite => {
-        res.redirect('/favorites')
-    });
+    db.favorite.findOrCreate({
+        where:{
+            artist: req.body.artist_name,
+            album_title: req.body.album_title,
+            //how do we get userid for user that's logged in
+            userId: 1,
+            masterId: req.body.master_id,
+        }
+}).then(function(fave) {
+    console.log('Created: ', fave.album_title)
+    res.redirect('/favorites')
+})
+});
 
 module.exports = router;

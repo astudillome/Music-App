@@ -6,9 +6,8 @@
     <p>Genre: <%= discogs[i].genre %></p>
     <form method="POST" action="/favorites">
         <input hidden type= "text" name="artist_name" value="<%= artist %>">
-        <input hidden type= "text" name="artist_id" value="<%= discogs[i].id %>">
-        <input hidden type= "text" name="artist_id" value="<%= discogs[i].id %>">
-        <input hidden type= "text" name="artist_id" value="<%= discogs[i].id %>">
+        <input hidden type= "text" name="album_title" value="<%= discogs[i].title %>">
+        <input hidden type= "text" name="master_id" value="<%= discogs[i].id %>">
         <button class="" type="submit">Add to Favorites</button>
     </form>
     <img src= "<%=discogs[i].cover_image%>" >
