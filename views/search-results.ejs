@@ -1,8 +1,8 @@
 <h2>Search Results</h2>
 
 <% for (i=0; i < discogs.length; i++) { %>
-    <p> <%= discogs[i].title %> </p>
-    <p><%= discogs[i].year %></p>
-    <p><%= discogs[i].genre %></p>
+    <p>Album Title: <%= discogs[i].title %> </p>
+    <p>Release Year: <%= discogs[i].year %></p>
+    <p>Genre: <%= discogs[i].genre %></p>
     <img src= "<%=discogs[i].cover_image%>" >
 <% } %>
