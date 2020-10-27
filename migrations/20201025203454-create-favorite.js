@@ -11,10 +11,13 @@ module.exports = {
       artist: {
         type: Sequelize.STRING
       },
-      song_title: {
+      album_title: {
         type: Sequelize.STRING
       },
       userId: {
+        type: Sequelize.INTEGER
+      },
+      masterId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
