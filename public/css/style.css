@@ -60,6 +60,10 @@ body {
   font-family: var(--bodyTxt);
 }
 
+.bodyWidth {
+  max-width: 80ch;
+}
+
 .noListDiscs {
   list-style-type: none;
 }
