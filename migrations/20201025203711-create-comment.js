@@ -14,7 +14,7 @@ module.exports = {
       content: {
         type: Sequelize.STRING
       },
-      song_titleId: {
+      album_titleId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
