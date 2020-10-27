@@ -60,22 +60,28 @@ body {
   font-family: var(--bodyTxt);
 }
 
+.mxWidthEightyCh {
+  max-width: 80ch;
+}
+
+.noListDiscs {
+  list-style-type: none;
+}
+
 nav ul li {
   text-decoration: none;
 }
 
-
-.navUl:first-child {
-  justify-content: flex-start;
-  justify-items: start;
-}
-
-.navUl:not(:first-child) {
-  margin-left: .5rem;
+.minWidthFifty {
+  min-width:50%
 }
 
 .display {
   font-family: var(--displayTxt);
+}
+
+.marginMed {
+  margin: 1.5em;
 }
 
 .flex {
@@ -99,12 +105,17 @@ nav ul li {
 }
 
 .justifySpaceBetween {
-  justify-items: space-between;
+  justify-content: space-between;
 }
 
 .alignCenter {
   align-content: center;
   align-items: center;
+}
+
+.thumbnail {
+  height: calc(2rem + 1.5vw);
+  max-width: 100%;
 }
 
 .firstCap {
