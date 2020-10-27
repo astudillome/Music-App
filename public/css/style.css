@@ -60,7 +60,7 @@ body {
   font-family: var(--bodyTxt);
 }
 
-.bodyWidth {
+.mxWidthEightyCh {
   max-width: 80ch;
 }
 
@@ -72,17 +72,16 @@ nav ul li {
   text-decoration: none;
 }
 
-.navUl:first-child {
-  justify-content: flex-start;
-  justify-items: start;
-}
-
-.navUl:not(:first-child) {
-  margin-left: .5rem;
+.minWidthFifty {
+  min-width:50%
 }
 
 .display {
   font-family: var(--displayTxt);
+}
+
+.marginMed {
+  margin: 1.5em;
 }
 
 .flex {
@@ -106,7 +105,7 @@ nav ul li {
 }
 
 .justifySpaceBetween {
-  justify-items: space-between;
+  justify-content: space-between;
 }
 
 .alignCenter {
@@ -116,7 +115,7 @@ nav ul li {
 
 .thumbnail {
   height: calc(2rem + 1.5vw);
-  width: 100%;
+  max-width: 100%;
 }
 
 .firstCap {
