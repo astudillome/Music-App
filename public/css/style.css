@@ -106,3 +106,7 @@ nav ul li {
   align-content: center;
   align-items: center;
 }
+
+.firstCap {
+  text-transform:capitalize;
+}

@@ -1,5 +1,5 @@
 {
-  "name": "green-room-app",
+  "name": "green_room_dev",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
