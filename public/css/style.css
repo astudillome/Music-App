@@ -60,10 +60,13 @@ body {
   font-family: var(--bodyTxt);
 }
 
+.noListDiscs {
+  list-style-type: none;
+}
+
 nav ul li {
   text-decoration: none;
 }
-
 
 .navUl:first-child {
   justify-content: flex-start;
@@ -105,6 +108,11 @@ nav ul li {
 .alignCenter {
   align-content: center;
   align-items: center;
+}
+
+.thumbnail {
+  height: calc(2rem + 1.5vw);
+  width: 100%;
 }
 
 .firstCap {
