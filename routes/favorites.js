@@ -16,12 +16,13 @@ router.get('/', (req, res) =>{
 //POST /favorites - receive album information and add it to the Database
 router.post('/', function(req,res) {
     //ToDo: Get form data and add it
+    console.log(req.user)
     db.favorite.findOrCreate({
         where:{
             artist: req.body.artist_name,
             album_title: req.body.album_title,
             //how do we get userid for user that's logged in
-            userId: 1,
+            userId: req.user.id,
             masterId: req.body.master_id,
         }
 }).then(function(fave) {
