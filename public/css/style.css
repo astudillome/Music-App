@@ -62,8 +62,16 @@ body {
 
 nav ul li {
   text-decoration: none;
-  display: inline-block;
-  margin-right: .3em;
+}
+
+
+.navUl:first-child {
+  justify-content: flex-start;
+  justify-items: start;
+}
+
+.navUl:not(:first-child) {
+  margin-left: .5rem;
 }
 
 .display {
@@ -72,6 +80,8 @@ nav ul li {
 
 .flex {
   display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 
 .grid {

@@ -19,7 +19,12 @@
   <body>
     <header>
       <nav>
-        <ul>
+        <ul class="flex justifyEnd navUl">
+          <li>
+            <a href="index.ejs">
+              <img src="/images/happyTape.svg" alt="a smiling audio cassette">
+            </a>
+          </li>
           <% if (!currentUser) { %>
             <li><a href="/auth/signup">Sign Up</a></li>
             <li><a href="/auth/login">Login</a></li>
