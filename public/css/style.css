@@ -7,8 +7,8 @@ html {
   /* responsive font size --from CSS Tricks*/
   font-size: min(max(16px, 3vw), 24px);
   scroll-behavior: smooth;
-
-  margin: 2rem;
+  --main: 2rem
+  margin: var(--mainMargin);
 
   /* high emph dark text for light backgrounds */
   --darkColor: hsla(0, 0%, 0%, .87);
@@ -64,12 +64,20 @@ body {
   max-width: 80ch;
 }
 
+.widthFull {
+  width: 100%;
+}
+
 .noListDiscs {
   list-style-type: none;
 }
 
 nav ul li {
   text-decoration: none;
+}
+
+nav ul:nth-child(n+2) {
+  margin-left: .5rem;
 }
 
 .minWidthFifty {
@@ -88,14 +96,6 @@ nav ul li {
   display: flex;
   flex-wrap: wrap;
   overflow: hidden;
-}
-
-.flexDirectCol {
-  flex-direction: column;
-}
-
-.flexWrapNone {
-  flex-wrap: nowrap;
 }
 
 .grid {
