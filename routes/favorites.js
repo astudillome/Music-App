@@ -16,11 +16,10 @@ router.get('/', (req, res) =>{
 //POST /favorites - receive album information and add it to the Database
 router.post('/', function(req,res) {
     //ToDo: Get form data and add it
-    console.log(req.body)
+    console.log('---------')
+    console.log(req.body.artist_id)
     //db.pokemon.findOrCreate(req.body).then(newFavorite => {
-        res.redirect('/')
+        res.redirect('/favorites')
     });
-
-
 
 module.exports = router;
