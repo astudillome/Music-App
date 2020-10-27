@@ -4,10 +4,10 @@ const db = require('../models');
 const router = express.Router();
 const axios = require('axios');
 
-// router.get('/', (req, res) => {
-//   res.render('auth/signup');
-// });
-
 router.post('/', (req, res) =>{
-  console.log("in search post route")
+  
+  console.log("////",req.body.search_input)
+  res.render('search-results')
 })
+
+module.exports = router;
