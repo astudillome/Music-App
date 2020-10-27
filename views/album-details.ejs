@@ -1,7 +1,12 @@
 <h2>Album Details</h2>
 
 <h3>Comments</h3>
-
+<% /* %>
+<% for (let i = 0; i < ; i++) { %>
+  <p><%= content %></p>
+  <p> - <%= name %></p>
+<% } %>
+<% /* %>
 <h4>Create a New Comment</h4>
 <form action="/comments" method="POST">
   <div class="form-group">
@@ -12,6 +17,6 @@
     <label for="content">Comment</label>
     <textarea type="text" class="form-control" id="content" name="content" required></textarea>
   </div>
-  <input type="hidden" name="masterId" value="<%= 1 %>">
+  <input type="hidden" name="album_titleId" value="<%= favorites.album_titleId%>">
   <input type="submit" class="btn btn-primary">
 </form>

@@ -16,15 +16,13 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class="mxWidthEightyCh">
     <header>
-      <nav>
-        <ul class="flex justifyEnd navUl">
-          <li>
-            <a href="index.ejs">
-              <img src="/images/happyTape.svg" alt="a smiling audio cassette">
-            </a>
-          </li>
+      <nav class="flex justifySpaceBetween">
+        <a href="/">
+          <img src="/images/happyTape.svg" alt="a smiling audio cassette" class="thumbnail">
+        </a>
+        <ul class="flex justifySpaceBetween minWidthFifty noListDiscs">
           <% if (!currentUser) { %>
             <li><a href="/auth/signup">Sign Up</a></li>
             <li><a href="/auth/login">Login</a></li>
@@ -38,7 +36,7 @@
       </nav>
     </header>
     <%- include('partials/alerts') %>
-    <h1>Green Room Music Player</h1> <br>
+    <h1 class="display marginMed">The Green Room</h1>
     <%- body %>
   </body>
 </html>
