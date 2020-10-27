@@ -11,10 +11,8 @@ router.get('/', function(req, res) {
 router.post('/', function (req, res) {
   console.log("///anything")
   console.log(req.body)
-  db.comment.create(req.body)
-  
-    .then(function (comment) {
-      res.redirect(`/album-details/${req.body.masterId}`)
+  db.comment.create(req.body).then(function (comment) {
+      res.redirect(`/album-details/${req.body.album_titleId}`)
     })
     .catch(function (error) {
       console.log(error);
