@@ -4,6 +4,7 @@
     <p>Album Title: <%= discogs[i].title %> </p>
     <p>Release Year: <%= discogs[i].year %></p>
     <p>Genre: <%= discogs[i].genre %></p>
+
     <form method="POST" action="/favorites">
         <input hidden type= "text" name="artist_name" value="<%= artist %>">
         <input hidden type= "text" name="album_title" value="<%= discogs[i].title %>">

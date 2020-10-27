@@ -48,7 +48,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 app.use('/auth', require('./routes/auth'));
 app.use('/search', isLoggedIn, require('./routes/search'));
 app.use('/favorites', isLoggedIn, require('./routes/favorites'));
-app.use('/comments', require('./routes/comments'))
+app.use('/comments', require('./routes/comments'));
 
 var server = app.listen(process.env.PORT || 3000, ()=> console.log(`🎧You're listening to the smooth sounds of port ${process.env.PORT || 3000}🎧`));
 

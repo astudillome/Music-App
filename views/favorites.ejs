@@ -2,7 +2,6 @@
 
 <% for (let i = 0; i < favorites.length; i++) { %>
     <p> <%= favorites[i].album_title %> </p>
-    <form method="GET" action="/favorites/<%=favorites[i].album_title%>">
-        <input hidden type="text" name="name" value="<%= favorites[i].masterID %>">
-        <button class="btn btn-primary" type="submit">See Details</button>
+    <a class="btn btn-primary" href= "/favorites/<%= favorites[i].masterId %>" > See Details </a>
+
 <% } %>
