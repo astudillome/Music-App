@@ -16,7 +16,7 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
   </head>
-  <body class="mxWidthLg">
+  <body class="grid justifyCenter mxWidthLg">
     <header>
       <nav class="flex justifySpaceBetween">
         <a href="/" class="mxWidthSm">
@@ -37,8 +37,8 @@
     </header>
     <%- include('partials/alerts') %>
     <% if (!currentUser) { %>
-    <h1 class="display marginMed">The Green Room</h1>
-    <% } %>
-    <%- body %>
+      <h1 class="display marginMed">The Green Room</h1>
+    <% } %>  
+  <%- body %>
   </body>
 </html>

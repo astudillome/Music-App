@@ -68,7 +68,7 @@ img {
 }
 
 .mxWidthLg {
-  max-width: 90ch;
+  max-width: 100ch;
 }
 
 .mxWidthSm {
@@ -156,4 +156,8 @@ nav ul:nth-child(n+2) {
 
 .firstCap {
   text-transform: capitalize;
+}
+
+.btn {
+  margin: 1rem;
 }
