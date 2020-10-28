@@ -6,6 +6,19 @@ router.get('/', function(req, res) {
   console.log('working')
   res.send('you are here')
 })
+// GET route to get comments
+// router.get('/:id', function(req,res) {
+//   axios.get(`https://api.discogs.com/masters/${req.params.id}`).then(function(apiResponse) {
+//       let albumDetails = apiResponse.data
+//       db.favorite.findAll({
+//         where: { masterId: req.params.id },
+//         // include: comment
+//       }).then(function (comments){
+//         console.log(comments);
+//         res.render('album-details', {albumDetails, comments})
+//       })
+//       })
+// })
 
 // POST /comments - create a new comment
 router.post('/', function (req, res) {

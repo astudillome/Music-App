@@ -19,14 +19,17 @@
   <% } %>
 </ol>
 
-<h5>Videos</h5>
+<br>
 
+<% if (albumDetails.videos == null) { %>
+<p>No videos to show</p>
+<% } else { %>
+<h5>Videos</h5>
 <ul>
   <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
   <li> <%= albumDetails.videos[i].uri %> </li>
-  <% } %>
+  <% }%>
 </ul>
+}
 
-
-
-
+<% } %>
