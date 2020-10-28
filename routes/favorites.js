@@ -33,8 +33,13 @@ router.post('/', function (req, res) {
 router.get('/:id', function(req,res) {
     axios.get(`https://api.discogs.com/masters/${req.params.id}`).then(function(apiResponse) {
         let albumDetails = apiResponse.data;
-        console.log(albumDetails)
-        res.render('album-details', {albumDetails})
+        db.favorite.findAll({
+          where: { masterId: req.params.id },
+          include: comment
+        }).then(function (comments){
+          console.log(comments);
+          res.render('album-details', {albumDetails, comments})
+        })
         })
 })
 
