@@ -17,6 +17,9 @@ module.exports = {
       album_titleId: {
         type: Sequelize.INTEGER
       },
+      favoriteId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

@@ -2,9 +2,6 @@
 <br>
 <h3><%= albumDetails.title %></h3>
 
-
-<
-
 <h5>Artist:</h5>
 <p><%= albumDetails.artists[0].name %></p>
 <br>
@@ -15,21 +12,31 @@
 <p><%= albumDetails.genres %></p>
 <br>
 
-
-
 <h5>Track List:</h5>
 <ol>
-<% for ( let i = 0; i < albumDetails.tracklist.length; i++) { %>
+  <% for ( let i = 0; i < albumDetails.tracklist.length; i++) { %>
   <li> <%= albumDetails.tracklist[i].title %> </li>
-<% } %>
+  <% } %>
 </ol>
 
 <h5>Videos</h5>
 
 <ul>
   <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
-    <li> <%= albumDetails.videos[i].uri %> </li>
+  <li> <%= albumDetails.videos[i].uri %> </li>
   <% } %>
-  </ul>
+</ul>
 
-  https://www.discogs.com/The-Field-Sun-Ice/master/1138131#images/706149
+<h4>Create a New Comment</h4>
+<form action="/comments" method="POST">
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="content">Comment</label>
+    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
+  </div>
+  <input type="hidden" name="favoriteId" value="<%= comments[i].favoriteId %>">
+  <input type="submit" class="btn btn-primary">
+</form>

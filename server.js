@@ -44,12 +44,17 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 
+app.get('/album-details', isLoggedIn, (req, res) => {
+  res.render('album-details');
+});
+
 // Use routes
 app.use('/auth', require('./routes/auth'));
 app.use('/search', isLoggedIn, require('./routes/search'));
-app.use('/favorites', isLoggedIn, require('./routes/favorites'));
-app.use('/comments', require('./routes/comments'));
+app.use('/comments', isLoggedIn, require('./routes/comments'))
+app.use('/favorites', isLoggedIn, require('./routes/favorites'))
 
+// Server
 var server = app.listen(process.env.PORT || 3000, ()=> console.log(`🎧You're listening to the smooth sounds of port ${process.env.PORT || 3000}🎧`));
 
 module.exports = server;
