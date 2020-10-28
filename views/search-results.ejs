@@ -6,7 +6,6 @@
     <section>
         <img src="<%=discogs[i].cover_image%>">
 
-<<<<<<< HEAD
       <form method="POST" action="/favorites">
         <input hidden type="text" name="artist_name" value="<%= artist %>">
         <input hidden type="text" name="album_title" value="<%= discogs[i].title %>">
@@ -23,24 +22,6 @@
         <%= discogs[i].genre %></p>
 
       <img src="<%=discogs[i].cover_image%>">
-=======
-        
-        <p>
-            <!-- Album Title: -->
-            <%= discogs[i].title %><br>
-            <!-- Release Year: -->
-            <%= discogs[i].year %><br>
-            <!-- Genre: -->
-            <%= discogs[i].genre %>
-        </p>
-
-        <form method="POST" action="/favorites">
-            <input hidden type="text" name="artist_name" value="<%= artist %>">
-            <input hidden type="text" name="album_title" value="<%= discogs[i].title %>">
-            <input hidden type="text" name="master_id" value="<%= discogs[i].id %>">
-            <button class="" type="submit">&#9734 Favorite &#9734</button>
-        </form>
->>>>>>> 09743fa3d4ba07bd87b66c8a3d33605e20df7815
     </section>
     <% } %>
   </article>

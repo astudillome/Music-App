@@ -1,16 +1,16 @@
 <h2>Album Details</h2>
-<br>
+
 <h3><%= albumDetails.title %></h3>
 
 <h5>Artist:</h5>
 <p><%= albumDetails.artists[0].name %></p>
-<br>
+
 <h5>Release Year:</h5>
 <p><%= albumDetails.year %></p>
-<br>
+
 <h5> Genres: </h5>
 <p><%= albumDetails.genres %></p>
-<br>
+
 
 <h5>Track List:</h5>
 <ol>
@@ -18,8 +18,6 @@
   <li> <%= albumDetails.tracklist[i].title %> </li>
   <% } %>
 </ol>
-
-<br>
 
 <% if (albumDetails.videos == null) { %>
 <p>No videos to show</p>
