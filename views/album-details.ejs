@@ -1,26 +1,35 @@
 <h2>Album Details</h2>
+<br>
+<h3><%= albumDetails.title %></h3>
+
+
+<
+
+<h5>Artist:</h5>
+<p><%= albumDetails.artists[0].name %></p>
+<br>
+<h5>Release Year:</h5>
+<p><%= albumDetails.year %></p>
+<br>
+<h5> Genres: </h5>
+<p><%= albumDetails.genres %></p>
+<br>
 
 
 
-
-
-<h2>Comments</h2>
-<% for (let i = 0; i < ; i++) { %>
-  <p><%= content %></p>
-  <p> - <%= name %></p>
+<h5>Track List:</h5>
+<ol>
+<% for ( let i = 0; i < albumDetails.tracklist.length; i++) { %>
+  <li> <%= albumDetails.tracklist[i].title %> </li>
 <% } %>
+</ol>
 
-<h3>Create a New Comment</h3>
-<form action="/comments" method="POST">
-  <div class="form-group">
-    <label for="title">Full Name</label>
-    <input type="text" class="form-control" id="name" name="name" required>
-  </div>
-  <div class="form-group">
-    <label for="content">Comment</label>
-    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
-  </div>
-  <!-- value needs updating to reflect album masterId -->
-  <input type="hidden" name="articleId" value="<%= article.id %>">
-  <input type="submit" class="btn btn-primary">
-</form>
+<h5>Videos</h5>
+
+<ul>
+  <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
+    <li> <%= albumDetails.videos[i].uri %> </li>
+  <% } %>
+  </ul>
+
+  https://www.discogs.com/The-Field-Sun-Ice/master/1138131#images/706149
