@@ -16,10 +16,10 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&family=Permanent+Marker&display=swap" rel="stylesheet">
   </head>
-  <body class="grid justifyCenter mxWidthEightyCh">
+  <body class="mxWidthLg">
     <header>
-      <nav class="flex justifySpaceBetween widthFull">
-        <a href="/">
+      <nav class="flex justifySpaceBetween">
+        <a href="/" class="mxWidthSm">
           <img src="/images/happyTape.svg" alt="a smiling audio cassette" class="thumbnail">
         </a>
         <ul class="flex justifySpaceBetween minWidthFifty noListDiscs">
@@ -36,7 +36,9 @@
       </nav>
     </header>
     <%- include('partials/alerts') %>
+    <% if (!currentUser) { %>
     <h1 class="display marginMed">The Green Room</h1>
+    <% } %>
     <%- body %>
   </body>
 </html>
