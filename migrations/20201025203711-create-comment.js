@@ -14,10 +14,13 @@ module.exports = {
       content: {
         type: Sequelize.STRING
       },
-      album_titleId: {
-        type: Sequelize.INTEGER
+      album_title: {
+        type: Sequelize.STRING
       },
       favoriteId: {
+        type: Sequelize.INTEGER
+      },
+      masterId: {
         type: Sequelize.INTEGER
       },
       createdAt: {
