@@ -38,5 +38,15 @@ router.get('/:id', function(req,res) {
         })
 })
 
+//Remove from favorites list
+router.delete('/delete', function (req, res) {
+    db.favorite.destroy({
+      where:
+        { masterId: req.body.masterId }
+    }).then(function (fave) {
+      res.redirect('/favorites');
+    });
+  })
+
 
 module.exports = router;
