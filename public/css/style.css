@@ -5,10 +5,12 @@ html {
   font-size: 18px;
   
   /* responsive font size --from CSS Tricks*/
-  font-size: min(max(16px, 3vw), 24px);
+  font-size: min(max(16px, 2vw), 24px);
+  
   scroll-behavior: smooth;
 
-  margin: 2rem;
+  --mainMargin: 2rem;
+  margin: var(--mainMargin);
 
   /* high emph dark text for light backgrounds */
   --darkColor: hsla(0, 0%, 0%, .87);
@@ -60,8 +62,21 @@ body {
   font-family: var(--bodyTxt);
 }
 
-.mxWidthEightyCh {
-  max-width: 80ch;
+img {
+  height: auto;
+  width: 100%;
+}
+
+.mxWidthLg {
+  max-width: 90ch;
+}
+
+.mxWidthSm {
+  max-width: 3rem;
+}
+
+.widthFull {
+  width: 100%;
 }
 
 .noListDiscs {
@@ -70,6 +85,12 @@ body {
 
 nav ul li {
   text-decoration: none;
+  margin-left: .5rem;
+  padding: .25rem;
+}
+
+nav ul:nth-child(n+2) {
+  margin-left: .5rem;
 }
 
 .minWidthFifty {
@@ -84,6 +105,10 @@ nav ul li {
   margin: 1.5em;
 }
 
+.marginLg {
+  margin: 2rem;
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;
@@ -92,6 +117,16 @@ nav ul li {
 
 .grid {
   display: grid;
+}
+
+.gapTwoRem {
+  grid-gap: 2rem; /* fallback */
+  gap: 2rem;
+}
+
+.gridResponsive {
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
 }
 
 .justifyCenter {
@@ -114,10 +149,11 @@ nav ul li {
 }
 
 .thumbnail {
-  height: calc(2rem + 1.5vw);
+  max-height: calc(2rem + 1.5vw);
+  height: auto;
   max-width: 100%;
 }
 
 .firstCap {
-  text-transform:capitalize;
+  text-transform: capitalize;
 }
