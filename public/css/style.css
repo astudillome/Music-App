@@ -157,3 +157,7 @@ nav ul:nth-child(n+2) {
 .firstCap {
   text-transform: capitalize;
 }
+
+.btn {
+  margin: 1rem;
+}
