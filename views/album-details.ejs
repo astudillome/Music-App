@@ -1,7 +1,31 @@
 <h2>Album Details</h2>
+<br>
+<h3><%= albumDetails.title %></h3>
 
+<h5>Artist:</h5>
+<p><%= albumDetails.artists[0].name %></p>
+<br>
+<h5>Release Year:</h5>
+<p><%= albumDetails.year %></p>
+<br>
+<h5> Genres: </h5>
+<p><%= albumDetails.genres %></p>
+<br>
 
+<h5>Track List:</h5>
+<ol>
+  <% for ( let i = 0; i < albumDetails.tracklist.length; i++) { %>
+  <li> <%= albumDetails.tracklist[i].title %> </li>
+  <% } %>
+</ol>
 
+<h5>Videos</h5>
+
+<ul>
+  <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
+  <li> <%= albumDetails.videos[i].uri %> </li>
+  <% } %>
+</ul>
 
 <h4>Create a New Comment</h4>
 <form action="/comments" method="POST">
