@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 // POST /comments - create a new comment
 router.post('/', function (req, res) {
   console.log("///anything")
-  console.log(req.body)
+  // console.log(req.body)
   db.comment.create(req.body).then(function (comment) {
       res.redirect(`/album-details/${req.body.album_titleId}`)
     })
