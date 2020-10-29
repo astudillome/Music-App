@@ -5,8 +5,6 @@ const axios = require('axios')
 
 // POST /comments - create a new comment
 router.post('/', function (req, res) {
-  console.log("///anything")
-  // console.log(req.body)
   db.comment.create(req.body).then(function (comment) {
       res.redirect(`/favorites/${req.body.masterId}`)
     })
