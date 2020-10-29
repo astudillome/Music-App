@@ -1,7 +1,6 @@
 const express = require('express')
 const db = require('../models')
 const router = express.Router()
-const axios = require('axios')
 
 // POST /comments - create a new comment
 router.post('/', function (req, res) {
