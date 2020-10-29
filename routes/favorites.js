@@ -36,7 +36,6 @@ router.get('/:id', function(req,res) {
       db.comment.findAll({
         where: { masterId: req.params.id }, 
       }).then(function (comments){
-        console.log("these are the comments", comments);
         res.render('album-details', {albumDetails, comments})
       })
       })
