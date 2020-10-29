@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
     artist: DataTypes.STRING,
     album_title: DataTypes.STRING,
     userId: DataTypes.INTEGER,
-    masterId: DataTypes.INTEGER
+    masterId: DataTypes.INTEGER,
+    artwork: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'favorite',
