@@ -19,7 +19,7 @@
   <% } %>
 </ol>
 
-<% if (albumDetails.videos == null) { %>
+<% if (albumDetails.videos === null) { %>
 <p>No videos to show</p>
 <% } else { %>
 <h5>Videos</h5>
@@ -28,6 +28,18 @@
   <li> <%= albumDetails.videos[i].uri %> </li>
   <% }%>
 </ul>
-}
-
 <% } %>
+
+<h4>Create a New Comment</h4>
+<form action="/comments" method="POST">
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="content">Comment</label>
+    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
+  </div>
+  <input type="hidden" name="masterId" value="<%= albumDetails.id %>">
+  <input type="submit" class="btn btn-primary">
+</form>
