@@ -8,8 +8,9 @@ const axios = require('axios');
 //GET /favorites - return a page with favorited albums
 router.get('/', (req, res) => {
   //ToDo: get all records from DB and render to view
+  let userName = req.user.name
   db.favorite.findAll().then(allFavorites => {
-    res.render('favorites', { favorites: allFavorites })
+    res.render('favorites', { favorites: allFavorites, userName })
   })
 })
 
