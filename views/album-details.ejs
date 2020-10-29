@@ -25,9 +25,11 @@
   <h5>Videos</h5>
   <ul>
     <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
-      <li><%= albumDetails.videos[i].uri %></li>
+      <li id="url"><%= albumDetails.videos[i].uri %></li>
     <% }%>
   </ul>
+
+  <div class="youtubeCont"></div>
 
 <% } %>
 
@@ -50,3 +52,5 @@
   <input type="hidden" name="masterId" value="<%= albumDetails.id %>">
   <input type="submit" class="btn btn-primary">
 </form>
+
+<script src="../js/youtube.js"></script>
