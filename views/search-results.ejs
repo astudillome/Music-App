@@ -1,27 +1,27 @@
 <main class="grid gapTwoRem">
-  <h2>Search Results for <span class="firstCap"><%= artist %></span></h2>
+  <h2>Results for <span class="firstCap"><%= artist %></span></h2>
 
   <article class="grid gapTwoRem gridResponsive">
     <% for (i=0; i < discogs.length; i++) { %>
     <section>
         <img src="<%=discogs[i].cover_image%>">
 
-      <form method="POST" action="/favorites">
-        <input hidden type="text" name="artist_name" value="<%= artist %>">
-        <input hidden type="text" name="album_title" value="<%= discogs[i].title %>">
-        <input hidden type="text" name="masterId" value="<%= discogs[i].id %>">
-        <button class="" type="submit">Add to Favorites</button>
-      </form>
-      <br>
+        <!-- Album Title: -->
+        <p>
+            <%= discogs[i].title %><br>
+            <!-- Release Year: -->
+            <%= discogs[i].year %><br>
+            <!-- Genre: -->
+            <%= discogs[i].genre %>
+        </p>
 
-      <!-- Album Title: -->
-      <p><%= discogs[i].title %><br>
-        <!-- Release Year: -->
-        <%= discogs[i].year %><br>
-        <!-- Genre: -->
-        <%= discogs[i].genre %></p>
-
-      <img src="<%=discogs[i].cover_image%>">
+        <form method="POST" action="/favorites">
+            <input hidden type="text" name="artist_name" value="<%= artist %>">
+            <input hidden type="text" name="album_title" value="<%= discogs[i].title %>">
+            <input hidden type="text" name="masterId" value="<%= discogs[i].id %>">
+            <input hidden type="text" name="artwork" value="<%= discogs[i].cover_image %>">
+            <button class="btn btn-light" type="submit">&#9734 Favorite &#9734</button>
+        </form>
     </section>
     <% } %>
   </article>
