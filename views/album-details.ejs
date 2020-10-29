@@ -19,15 +19,20 @@
   <% } %>
 </ol>
 
+<<<<<<< HEAD
 <% if (albumDetails.videos == null) { %>
+=======
+<% if (!albumDetails.videos) { %>
+>>>>>>> submain
 <p>No videos to show</p>
 <% } else { %>
-<h5>Videos</h5>
-<ul>
-  <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
-  <li> <%= albumDetails.videos[i].uri %> </li>
-  <% }%>
-</ul>
+  <h5>Videos</h5>
+  <ul>
+    <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
+      <li><%= albumDetails.videos[i].uri %></li>
+    <% }%>
+  </ul>
+
 <% } %>
 
 <h5>Comments</h5>
