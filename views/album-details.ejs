@@ -27,10 +27,10 @@
   <h5>Videos</h5>
   <ul>
     <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
-    <li> <%= albumDetails.videos[i].uri %> </li>
+      <li><%= albumDetails.videos[i].uri %></li>
+    <li> <iframe width="420" height="315" src = "<%= albumDetails.videos[i].uri %>""></iframe> </iframe></li>
     <% }%>
   </ul>
-}
 
 <% } %>
 

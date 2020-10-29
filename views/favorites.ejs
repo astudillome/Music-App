@@ -5,8 +5,8 @@
     <h4> <%= favorites[i].album_title %> </h4>
     <div CLASS="flex justifyCenter">
       <a class="btn btn-primary" href= "/favorites/<%= favorites[i].masterId %>" > See Details </a>
-      <form method="POST" action="/favorites/delete">
-        <input hidden type="text" name="masterId" value="<%= favorites[i].masterId %>">
+      <form method="POST" action="/favorites?_method=DELETE">
+        <input hidden type="text" name="artist" value="<%= favorites[i].artist %>">
         <button class="btn btnGrey" type="submit">Remove From Favorites</button>
       </form>
     </div>

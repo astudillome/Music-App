@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
   })
 })
 
+
 //POST /favorites - receive album information and add it to the Database
 router.post('/', function (req, res) {
   //ToDo: Get form data and add it
@@ -39,14 +40,13 @@ router.get('/:id', function(req,res) {
 })
 
 //Remove from favorites list
-router.delete('/delete', function (req, res) {
+router.delete('/', function (req, res) {
     db.favorite.destroy({
       where:
-        { masterId: req.body.masterId }
+        { artist: req.body.artist_name, }
     }).then(function (fave) {
       res.redirect('/favorites');
     });
   })
-
 
 module.exports = router;
