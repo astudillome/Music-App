@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
   })
 })
 
-//POST /favorites - receive album information and add it to the Database
+//POST /favorites - receive album information and add it to the favorites
 router.post('/', function (req, res) {
   //ToDo: Get form data and add it
   db.favorite.findOrCreate({
@@ -21,7 +21,7 @@ router.post('/', function (req, res) {
       artist: req.body.artist_name,
       album_title: req.body.album_title,
       userId: req.user.id,
-      masterId: req.body.master_id,
+      masterId: req.body.masterId,
     }
   }).then(function (fave) {
     console.log('Created: ', fave.album_title)
@@ -31,22 +31,14 @@ router.post('/', function (req, res) {
 
 //Display more information for each album
 router.get('/:id', function(req,res) {
-    axios.get(`https://api.discogs.com/masters/${req.params.id}`).then(function(apiResponse) {
-        let albumDetails = apiResponse.data;
-        console.log(albumDetails)
-        res.render('album-details', {albumDetails})
-        })
+  axios.get(`https://api.discogs.com/masters/${req.params.id}`).then(function(apiResponse) {
+      let albumDetails = apiResponse.data
+      db.comment.findAll({
+        where: { masterId: req.params.id }, 
+      }).then(function (comments){
+        res.render('album-details', {albumDetails, comments})
+      })
+      })
 })
-
-//Remove from favorites list
-router.delete('/delete', function (req, res) {
-    db.favorite.destroy({
-      where:
-        { masterId: req.body.masterId }
-    }).then(function (fave) {
-      res.redirect('/favorites');
-    });
-  })
-
 
 module.exports = router;

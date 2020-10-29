@@ -1,14 +1,13 @@
 <main class="grid gapTwoRem">
-  <h2>Search Results for <span class="firstCap"><%= artist %></span></h2>
+  <h2>Results for <span class="firstCap"><%= artist %></span></h2>
 
   <article class="grid gapTwoRem gridResponsive">
     <% for (i=0; i < discogs.length; i++) { %>
     <section>
         <img src="<%=discogs[i].cover_image%>">
 
-        
+        <!-- Album Title: -->
         <p>
-            <!-- Album Title: -->
             <%= discogs[i].title %><br>
             <!-- Release Year: -->
             <%= discogs[i].year %><br>
