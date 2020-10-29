@@ -34,17 +34,20 @@ router.post('/', function (req, res) {
 router.get('/:id', function(req,res) {
   axios.get(`https://api.discogs.com/masters/${req.params.id}`).then(function(apiResponse) {
       let albumDetails = apiResponse.data
-      db.comment.findAll({
-        where: { masterId: req.params.id }, 
-      }).then(function (comments){
-        res.render('album-details', {albumDetails, comments})
+      db.favorite.findOne({
+        where: {masterId: req.params.id},
+      }).then(function(album){
+        db.comment.findAll({
+          where: { masterId: req.params.id }, 
+          }).then(function (comments){
+            res.render('album-details', {albumDetails, comments, album})
+          })
       })
-      })
+    })
 })
 
 //Remove from favorites list
 router.delete('/', function (req, res) {
-    console.log(req.body.id)
     db.favorite.destroy({
       where:
         { id: req.body.id }
