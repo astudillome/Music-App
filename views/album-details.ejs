@@ -1,16 +1,16 @@
 <h2>Album Details</h2>
-<br>
+
 <h3><%= albumDetails.title %></h3>
 
 <h5>Artist:</h5>
 <p><%= albumDetails.artists[0].name %></p>
-<br>
+
 <h5>Release Year:</h5>
 <p><%= albumDetails.year %></p>
-<br>
+
 <h5> Genres: </h5>
 <p><%= albumDetails.genres %></p>
-<br>
+
 
 <h5>Track List:</h5>
 <ol>
@@ -19,20 +19,33 @@
   <% } %>
 </ol>
 
-<br>
-
-<% if (albumDetails.videos == null) { %>
-  <p>No videos to show</p>
+<% if (albumDetails.videos === null) { %>
+<p>No videos to show</p>
 <% } else { %>
-  <h5>Videos</h5>
-  <ul>
-    <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
-    <li> <%= albumDetails.videos[i].uri %> </li>
-    <% }%>
-  </ul>
-}
-
+<h5>Videos</h5>
+<ul>
+  <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
+  <li> <%= albumDetails.videos[i].uri %> </li>
+  <% }%>
+</ul>
 <% } %>
 
+<h4>Comments</h4>
+<% for (let i = 0; i < comments.length; i++) { %>
+  <p><%= comments[i].dataValues.content %></p>
+  <p> - <%= comments[i].dataValues.name %></p>
+<% } %>
 
-
+<h4>Create a New Comment</h4>
+<form action="/comments" method="POST">
+  <div class="form-group">
+    <label for="name">Full Name</label>
+    <input type="text" class="form-control" id="name" name="name" required>
+  </div>
+  <div class="form-group">
+    <label for="content">Comment</label>
+    <textarea type="text" class="form-control" id="content" name="content" required></textarea>
+  </div>
+  <input type="hidden" name="masterId" value="<%= albumDetails.id %>">
+  <input type="submit" class="btn btn-primary">
+</form>

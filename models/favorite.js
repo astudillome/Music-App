@@ -12,7 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.favorite.belongsTo(models.user);
-      models.favorite.hasMany(models.comment);
+      models.favorite.hasMany(models.comment, {
+        foreignKey: 'masterId'
+      });
+      models.comment.belongsTo(models.favorite)
     }
   };
   favorite.init({
