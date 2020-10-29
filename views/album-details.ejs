@@ -33,13 +33,13 @@
 
 <% } %>
 
-<h4>Comments</h4>
+<h5>Comments</h5>
 <% for (let i = 0; i < comments.length; i++) { %>
-  <p><%= comments[i].dataValues.content %></p>
-  <p> - <%= comments[i].dataValues.name %></p>
+<p><%= comments[i].dataValues.content %></p>
+<p> - <%= comments[i].dataValues.name %></p>
 <% } %>
 
-<h4>Create a New Comment</h4>
+<h5>Create a New Comment</h5>
 <form action="/comments" method="POST">
   <div class="form-group">
     <label for="name">Full Name</label>
