@@ -4,6 +4,7 @@
 
 <% for (let i = 0; i < favorites.length; i++) { %>
   <section class="marginLg">
+    <img src="<%=favorites[i].artwork%>">
     <h4> <%= favorites[i].album_title %> </h4>
     <div CLASS="flex justifyCenter">
       <a class="btn btn-primary" href= "/favorites/<%= favorites[i].masterId %>" > See Details </a>

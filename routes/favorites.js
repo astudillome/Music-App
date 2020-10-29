@@ -23,9 +23,9 @@ router.post('/', function (req, res) {
       album_title: req.body.album_title,
       userId: req.user.id,
       masterId: req.body.masterId,
+      artwork: req.body.artwork
     }
   }).then(function (fave) {
-    console.log('Created: ', fave.album_title)
     res.redirect('/favorites')
   })
 });
