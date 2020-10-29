@@ -75,6 +75,10 @@ img {
   max-width: 3rem;
 }
 
+.minWidthFull {
+  min-width: 100%;
+}
+
 .widthFull {
   width: 100%;
 }
