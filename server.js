@@ -1,7 +1,6 @@
 // Require
 require('dotenv').config();
 const express = require('express');
-const axios = require('axios')
 const layouts = require('express-ejs-layouts');
 const session = require('express-session')
 const flash = require('connect-flash');
