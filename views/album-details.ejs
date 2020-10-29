@@ -25,12 +25,12 @@
   <h5>Videos</h5>
   <ul>
     <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
-      <li id="url"><%= albumDetails.videos[i].uri %></li>
+      <div class='url'>
+        <%= albumDetails.videos[i].uri %>
+      </div>
+      <div class="youtubeCont"></div>
     <% }%>
-  </ul>
-
-  <div class="youtubeCont"></div>
-
+  </ul> 
 <% } %>
 
 <h5>Comments</h5>
