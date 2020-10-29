@@ -1,9 +1,12 @@
 // Require
 require('dotenv').config();
 const express = require('express');
+const axios = require('axios')
+const morgan = require('morgan')
 const layouts = require('express-ejs-layouts');
 const session = require('express-session')
 const flash = require('connect-flash');
+const methodOverride = require('method-override');
 const passport = require('./config/ppConfig');
 const isLoggedIn = require('./middleware/isLoggedIn');
 const app = express();
@@ -11,8 +14,9 @@ const app = express();
 // Middleware
 app.set('view engine', 'ejs');
 
-app.use(require('morgan')('dev'));
+app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride('_method'));
 app.use(express.static(__dirname + '/public'));
 app.use(layouts);
 
