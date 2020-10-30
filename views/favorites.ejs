@@ -3,20 +3,22 @@
 <h2>Your Favorite Albums</h2>
 
 <article class="grid gapTwoRem gridResponsive">
-<% for (let i = 0; i < favorites.length; i++) { %>
+  <% for (let i = 0; i < favorites.length; i++) { %>
   <section class="marginLg">
     <img src="<%=favorites[i].artwork%>">
     <p> <%= favorites[i].album_title %> </p>
+
     <div CLASS="flex justifyCenter">
       <form method="GET" action="/favorites/<%= favorites[i].masterId %>">
         <input hidden type="text" name="artwork" value="<%= favorites[i].artwork %>">
         <button class="btn btn-primary" type="submit">See Details</button>
       </form>
+
       <form method="POST" action="/favorites?_method=DELETE">
         <input hidden type="text" name="id" value="<%= favorites[i].id %>">
         <button class="btn btnGrey" type="submit">Remove From Favorites</button>
       </form>
     </div>
   </section>
-<% } %>
+  <% } %>
 </article>
