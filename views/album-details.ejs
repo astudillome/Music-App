@@ -23,15 +23,17 @@
 <p>No videos to show</p>
 <% } else { %>
   <h5>Videos</h5>
-  <ul>
+  <article class="grid gridResponsive gapTwoRem">
     <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
       <div class='url'>
         <%= albumDetails.videos[i].uri %>
       </div>
-      <div class="youtubeCont"></div>
+      
+      <figure style="--aspect-ratio: 16/9;" class="youtubeCont"></figure>
+      
       
     <% }%>
-  </ul> 
+    </article> 
 <% } %>
 <h5>Comments</h5>
 <% for (let i = 0; i < comments.length; i++) { %>

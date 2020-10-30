@@ -65,6 +65,8 @@ body {
 img {
   height: auto;
   width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
 }
 
 .mxWidthLg {
@@ -101,7 +103,12 @@ nav ul:nth-child(n+2) {
   min-width:50%
 }
 
+.paddingMd {
+  padding: 2rem 0;
+}
+
 .display {
+  color: #2e7d32;
   font-family: var(--displayTxt);
 }
 
@@ -164,4 +171,8 @@ nav ul:nth-child(n+2) {
 
 .btn {
   margin: 1rem;
+}
+
+.url {
+  display: none;
 }
