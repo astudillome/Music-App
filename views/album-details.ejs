@@ -1,6 +1,6 @@
 <h3><%= albumDetails.title %></h3>
 
-<img src="<%= album.artwork %>" >
+<img src="<%= album.artwork %>">
 
 <h5>Artist:</h5>
 <p><%= albumDetails.artists[0].name %></p>
@@ -22,21 +22,22 @@
 <% if (!albumDetails.videos) { %>
 <p>No videos to show</p>
 <% } else { %>
-  <h5>Videos</h5>
-  <ul>
-    <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
-      <div class='url'>
-        <%= albumDetails.videos[i].uri %>
-      </div>
-      <div class="youtubeCont"></div>
-      
-    <% }%>
-  </ul> 
+<h5>Videos</h5>
+<ul>
+  <% for ( let i = 0; i < albumDetails.videos.length; i++) { %>
+  <div class='url'>
+    <%= albumDetails.videos[i].uri %>
+  </div>
+  <div class="youtubeCont"></div>
+
+  <% }%>
+</ul>
 <% } %>
+
 <h5>Comments</h5>
 <% for (let i = 0; i < comments.length; i++) { %>
-<p><%= comments[i].dataValues.content %></p>
-<p> - <%= comments[i].dataValues.name %></p>
+  <p><%= comments[i].dataValues.content %></p>
+  <p> - <%= comments[i].dataValues.name %></p>
 <% } %>
 
 <h5>Create a New Comment</h5>

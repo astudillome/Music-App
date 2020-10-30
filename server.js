@@ -1,10 +1,10 @@
 // Require
 require('dotenv').config();
 const express = require('express');
-const axios = require('axios')
-const morgan = require('morgan')
+const axios = require('axios');
+const morgan = require('morgan');
 const layouts = require('express-ejs-layouts');
-const session = require('express-session')
+const session = require('express-session');
 const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const passport = require('./config/ppConfig');
@@ -31,8 +31,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+// before every route, attach the flash messages and current user to res.locals
 app.use((req, res, next) => {
-  // before every route, attach the flash messages and current user to res.locals
   res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
   next();
@@ -58,6 +58,6 @@ app.use('/comments', isLoggedIn, require('./routes/comments'))
 app.use('/favorites', isLoggedIn, require('./routes/favorites'))
 
 // Server
-var server = app.listen(process.env.PORT || 3000, ()=> console.log(`🎧You're listening to the smooth sounds of port ${process.env.PORT || 3000}🎧`));
+var server = app.listen(process.env.PORT || 3000, () => console.log(`🎧You're listening to the smooth sounds of port ${process.env.PORT || 3000}🎧`));
 
 module.exports = server;
