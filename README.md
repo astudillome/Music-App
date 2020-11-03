@@ -29,18 +29,18 @@
 ![ERD](public/images/erd_updated.png)
 
 ## Code Snipets
-![ERD](public/images/code1.png)
+![code](public/images/code1.png)
 
-![ERD](public/images/code2.png)
+![code](public/images/code2.png)
 
-![ERD](public/images/code3.png)
+![code](public/images/code3.png)
 
 ## App
-![ERD](public/images/app1.png)
+![app](public/images/app1.png)
 
-![ERD](public/images/app2.png)
+![app](public/images/app2.png)
 
-![ERD](public/images/app3.png)
+![app](public/images/app3.png)
 
 ## Feasibility Check
 * Read Discogs API documentation
