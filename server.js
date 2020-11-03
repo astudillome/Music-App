@@ -42,18 +42,16 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.render('index');
 });
-
 app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
-
 app.get('/album-details', isLoggedIn, (req, res) => {
   res.render('album-details');
 });
 
 // Use routes
 app.use('/auth', require('./routes/auth'));
-app.use('/search', isLoggedIn, require('./routes/search'));
+app.use('/search', require('./routes/search'));
 app.use('/comments', isLoggedIn, require('./routes/comments'))
 app.use('/favorites', isLoggedIn, require('./routes/favorites'))
 

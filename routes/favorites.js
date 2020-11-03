@@ -7,14 +7,17 @@ const axios = require('axios');
 
 //GET /favorites - return a page with favorited albums
 router.get('/', (req, res) => {
-  //ToDo: get all records from DB and render to view
   let userName = req.user.name
-  db.favorite.findAll().then(allFavorites => {
+  db.favorite.findAll({
+    where: {
+      userId: req.user.id
+    }
+  }).then(allFavorites => {
     res.render('favorites', { favorites: allFavorites, userName })
   })
 })
 
-//POST /favorites - receive album information and add it to the favorites
+//POST adding an album to favorites
 router.post('/', function (req, res) {
   db.favorite.findOrCreate({
     where: {
