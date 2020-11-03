@@ -1,5 +1,5 @@
 # Green Room Music Player
-## Scope
+## User Story
 * Provide user a search function that will provide information from 1 API engine.
 * User can create favorites, delete favorites library.
 * User must login/create user profile to create favorites list and comments.
