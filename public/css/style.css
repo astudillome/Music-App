@@ -67,6 +67,9 @@ img {
   width: 100%;
 }
 
+.url {
+  display: none;
+}
 .mxWidthLg {
   max-width: 100ch;
 }
